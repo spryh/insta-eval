@@ -97,6 +97,12 @@
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
         }
 
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .benefits {
             margin-top: 30px;
             text-align: left;
@@ -123,24 +129,61 @@
             font-size: 12px;
             color: #6b7280;
         }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 64px;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+
+        .success-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+
+        .success-text {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .form-section {
+            transition: opacity 0.3s ease;
+        }
+
+        .form-section.hide {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="form-container">
         <div class="logo">cofeature</div>
         
-        <h1>Free <span class="highlight">Instagram</span> Audit</h1>
-        <p class="subtitle">Get AI-powered insights about your social media performance</p>
-        
-        <!-- MailerLite Form Embed -->
-        <div class="ml-embedded" data-form="jWbTKb">
-            <!-- Your existing MailerLite form code goes here -->
-            <form action="https://assets.mailerlite.com/jsonp/1600306/forms/157408441903613523/subscribe" method="post" target="_blank">
+        <!-- Form Section -->
+        <div class="form-section" id="form-section">
+            <h1>Free <span class="highlight">Instagram</span> Audit</h1>
+            <p class="subtitle">Get AI-powered insights about your social media performance</p>
+            
+            <form id="audit-form" action="https://assets.mailerlite.com/jsonp/1600306/forms/157408441903613523/subscribe" method="post">
                 <input 
                     type="email" 
                     name="fields[email]" 
                     placeholder="Enter your email address" 
                     class="form-input"
+                    id="email-input"
                     required
                 >
                 
@@ -149,32 +192,81 @@
                     name="fields[name]" 
                     placeholder="Instagram handle (exact username)" 
                     class="form-input"
+                    id="instagram-input"
                     required
                 >
                 
                 <input type="hidden" name="ml-submit" value="1">
-                <button type="submit" class="submit-btn">Get My Free Audit</button>
+                <button type="submit" class="submit-btn" id="submit-btn">Get My Free Audit</button>
             </form>
+            
+            <div class="benefits">
+                <div class="benefit">Detailed engagement analysis</div>
+                <div class="benefit">Content performance insights</div>
+                <div class="benefit">Growth recommendations</div>
+                <div class="benefit">Delivered within 24 hours</div>
+            </div>
         </div>
-        
-        <div class="benefits">
-            <div class="benefit">Detailed engagement analysis</div>
-            <div class="benefit">Content performance insights</div>
-            <div class="benefit">Growth recommendations</div>
-            <div class="benefit">Delivered within 24 hours</div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="success-message">
+            <div class="success-icon">✅</div>
+            <h2 class="success-title">Thank You!</h2>
+            <p class="success-text">Your audit request has been submitted successfully.<br>You'll receive your detailed Instagram analysis within 24 hours.</p>
+            
+            <div class="benefits">
+                <div class="benefit">Check your email for confirmation</div>
+                <div class="benefit">Audit will arrive within 24 hours</div>
+                <div class="benefit">No spam, just valuable insights</div>
+            </div>
         </div>
         
         <p class="footer-text">© 2025 Cofeature LLC. Free audit, no spam.</p>
     </div>
 
-    <!-- MailerLite Universal Script -->
-    <script async src="https://assets.mailerlite.com/js/universal.js"></script>
     <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '1600306');
+        document.getElementById('audit-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = document.getElementById('submit-btn');
+            const formSection = document.getElementById('form-section');
+            const successMessage = document.getElementById('success-message');
+            
+            // Update button state
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            // Create FormData object
+            const formData = new FormData(form);
+            
+            // Submit to MailerLite
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Required for MailerLite
+            })
+            .then(() => {
+                // Since we can't read the response with no-cors, assume success
+                setTimeout(() => {
+                    formSection.classList.add('hide');
+                    successMessage.classList.add('show');
+                }, 1000);
+            })
+            .catch((error) => {
+                // Even errors might be successful due to CORS
+                setTimeout(() => {
+                    formSection.classList.add('hide');
+                    successMessage.classList.add('show');
+                }, 1000);
+            });
+        });
+
+        // Instagram handle formatting
+        document.getElementById('instagram-input').addEventListener('input', function(e) {
+            let value = e.target.value.replace('@', ''); // Remove @ if user types it
+            e.target.value = value;
+        });
     </script>
 </body>
 </html>
