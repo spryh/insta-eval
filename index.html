@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Instagram Audit - Cofeature</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Free Instagram Audit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+New:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,94 +13,104 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Courier New', Arial, monospace;
+            background: white;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            color: #1c1c1c;
         }
 
         .form-container {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            padding: 40px;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 48px;
             max-width: 500px;
             width: 100%;
             text-align: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #667eea;
-            margin-bottom: 20px;
+            border: none;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 8px;
+            color: #1c1c1c;
+            margin-bottom: 16px;
+            line-height: 2.16;
+            font-family: 'Courier New', Arial, monospace;
         }
 
         .subtitle {
-            color: #6b7280;
+            color: #1c1c1c;
             margin-bottom: 32px;
-            font-size: 16px;
+            font-size: 12pt;
+            font-weight: 400;
+            line-height: 1.8;
+            font-family: 'Courier New', Arial, monospace;
         }
 
         .highlight {
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: rgb(206,46,26);
+            font-weight: 700;
+            font-family: 'Courier New', Arial, monospace;
         }
 
         .form-input {
             width: 100%;
             padding: 16px 18px;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            font-size: 16px;
+            border: 2px solid #1c1c1c;
+            border-radius: 8px;
+            font-size: 12pt;
             margin-bottom: 20px;
             transition: all 0.3s ease;
-            background: #f9fafb;
-            font-family: inherit;
+            background: white;
+            font-family: 'Courier New', Arial, monospace;
+            font-weight: 400;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .form-input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #1c1c1c;
             background: white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            box-shadow: 0 0 0 3px rgba(28,28,28,0.15), 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+        }
+
+        .form-input::placeholder {
+            color: #666;
+            font-weight: 400;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 18px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 16px 24px;
+            background: rgb(61,164,78);
             color: white;
             border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
+            border-radius: 4px;
+            font-size: 12pt;
+            font-weight: 400;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
+            transition: all 0.2s ease;
+            font-family: 'Courier New', Arial, monospace;
+            letter-spacing: normal;
         }
 
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+            background: rgb(51,140,66);
+            transform: none;
+            box-shadow: none;
         }
 
         .submit-btn:disabled {
             opacity: 0.7;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
         }
 
         .benefits {
@@ -112,22 +122,70 @@
             display: flex;
             align-items: center;
             margin-bottom: 12px;
-            font-size: 14px;
-            color: #374151;
+            font-size: 9pt;
+            color: #1c1c1c;
+            font-weight: 400;
+            font-family: 'Courier New', Arial, monospace;
         }
 
         .benefit::before {
             content: "✓";
-            color: #10b981;
-            font-weight: bold;
+            color: rgb(206,46,26);
+            font-weight: 400;
             margin-right: 12px;
-            font-size: 16px;
+            font-size: 9pt;
         }
 
         .footer-text {
             margin-top: 30px;
-            font-size: 12px;
-            color: #6b7280;
+            font-size: 9pt;
+            color: #1c1c1c;
+            font-weight: 400;
+            font-family: 'Courier New', Arial, monospace;
+        }
+
+        /* Consent section styling */
+        .consent-section {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .consent-label {
+            display: flex;
+            align-items: flex-start;
+            font-size: 9pt;
+            color: #1c1c1c;
+            font-family: 'Courier New', Arial, monospace;
+            line-height: 1.4;
+            cursor: pointer;
+        }
+
+        .consent-checkbox {
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .consent-text {
+            flex: 1;
+        }
+
+        .policy-link {
+            color: #1c1c1c;
+            text-decoration: underline;
+        }
+
+        .policy-link:hover {
+            color: #333;
+        }
+
+        /* Yellow accent for form labels and highlights */
+        .form-input:focus::placeholder {
+            color: rgb(61,164,78);
+        }
+
+        .consent-checkbox:checked {
+            accent-color: rgb(242,220,65);
         }
 
         /* Success Message */
@@ -143,20 +201,24 @@
 
         .success-icon {
             font-size: 64px;
-            color: #10b981;
-            margin-bottom: 20px;
+            color: rgb(206,46,26);
+            margin-bottom: 24px;
         }
 
         .success-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1f2937;
+            font-size: 32px;
+            font-weight: 400;
+            color: #1c1c1c;
             margin-bottom: 12px;
+            font-family: 'Courier New', Arial, monospace;
         }
 
         .success-text {
-            color: #6b7280;
-            font-size: 16px;
+            color: #1c1c1c;
+            font-size: 12pt;
+            line-height: 2.16;
+            font-weight: 400;
+            font-family: 'Courier New', Arial, monospace;
         }
 
         .form-section {
@@ -166,16 +228,24 @@
         .form-section.hide {
             display: none;
         }
+
+        @media (max-width: 640px) {
+            .form-container {
+                padding: 32px 24px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <div class="logo">cofeature</div>
-        
         <!-- Form Section -->
         <div class="form-section" id="form-section">
-            <h1>Free <span class="highlight">Instagram</span> Audit</h1>
-            <p class="subtitle">Get AI-powered insights about your social media performance</p>
+            <h1>Free <span class="highlight">Instagram</span> Evaluation (Beta)</h1>
+            <p class="subtitle">We've developed a tool that scans your public Instagram account to see what works and what could improve.<br><br>Give us an email and we will mail it to you.</p>
             
             <form id="audit-form" action="https://assets.mailerlite.com/jsonp/1600306/forms/157408441903613523/subscribe" method="post">
                 <input 
@@ -190,21 +260,29 @@
                 <input 
                     type="text" 
                     name="fields[name]" 
-                    placeholder="Instagram handle (exact username)" 
+                    placeholder="Instagram handle (@username)" 
                     class="form-input"
                     id="instagram-input"
                     required
                 >
                 
+                <!-- Consent checkbox -->
+                <div class="consent-section">
+                    <label class="consent-label">
+                        <input type="checkbox" name="consent" class="consent-checkbox" required>
+                        <span class="consent-text">I agree to receive the evaluation results and consent to future communication about Instagram marketing insights. View our <a href="tos.html" target="_blank" class="policy-link">Terms of Service</a> and <a href="privacy.html" target="_blank" class="policy-link">Privacy Policy</a>.</span>
+                    </label>
+                </div>
+                
                 <input type="hidden" name="ml-submit" value="1">
-                <button type="submit" class="submit-btn" id="submit-btn">Get My Free Audit</button>
+                <button type="submit" class="submit-btn" id="submit-btn">Get My Free Evaluation</button>
             </form>
             
             <div class="benefits">
-                <div class="benefit">Detailed engagement analysis</div>
-                <div class="benefit">Content performance insights</div>
-                <div class="benefit">Growth recommendations</div>
-                <div class="benefit">Delivered within 24 hours</div>
+                <div class="benefit">Public account analysis</div>
+                <div class="benefit">Content performance review</div>
+                <div class="benefit">Improvement recommendations</div>
+                <div class="benefit">Delivered via email</div>
             </div>
         </div>
 
@@ -212,19 +290,20 @@
         <div class="success-message" id="success-message">
             <div class="success-icon">✅</div>
             <h2 class="success-title">Thank You!</h2>
-            <p class="success-text">Your audit request has been submitted successfully.<br>You'll receive your detailed Instagram analysis within 24 hours.</p>
+            <p class="success-text">Your evaluation request has been submitted successfully.<br>You'll receive your detailed Instagram analysis via email soon.</p>
             
             <div class="benefits">
                 <div class="benefit">Check your email for confirmation</div>
-                <div class="benefit">Audit will arrive within 24 hours</div>
-                <div class="benefit">No spam, just valuable insights</div>
+                <div class="benefit">Evaluation will arrive soon</div>
+                <div class="benefit">Follow-up to discuss insights</div>
             </div>
         </div>
         
-        <p class="footer-text">© 2025 Cofeature LLC. Free audit, no spam.</p>
+        <p class="footer-text">© 2025 Carlo & Zac Scarpa. Free evaluation, beta program.</p>
     </div>
 
     <script>
+        // Form validation to ensure consent is checked
         document.getElementById('audit-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -232,6 +311,13 @@
             const submitBtn = document.getElementById('submit-btn');
             const formSection = document.getElementById('form-section');
             const successMessage = document.getElementById('success-message');
+            const consentCheckbox = document.querySelector('input[name="consent"]');
+            
+            // Check if consent is given
+            if (!consentCheckbox.checked) {
+                alert('Please agree to the terms and consent to receive evaluation results.');
+                return;
+            }
             
             // Update button state
             submitBtn.textContent = 'Submitting...';
