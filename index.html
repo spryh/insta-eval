@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Instagram Audit - Cofeature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            background: #f9fafb;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .benefits {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .benefit::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="logo">cofeature</div>
+        
+        <h1>Free <span class="highlight">Instagram</span> Audit</h1>
+        <p class="subtitle">Get AI-powered insights about your social media performance</p>
+        
+        <!-- MailerLite Form Embed -->
+        <div class="ml-embedded" data-form="jWbTKb">
+            <!-- Your existing MailerLite form code goes here -->
+            <form action="https://assets.mailerlite.com/jsonp/1600306/forms/157408441903613523/subscribe" method="post" target="_blank">
+                <input 
+                    type="email" 
+                    name="fields[email]" 
+                    placeholder="Enter your email address" 
+                    class="form-input"
+                    required
+                >
+                
+                <input 
+                    type="text" 
+                    name="fields[name]" 
+                    placeholder="Instagram handle (exact username)" 
+                    class="form-input"
+                    required
+                >
+                
+                <input type="hidden" name="ml-submit" value="1">
+                <button type="submit" class="submit-btn">Get My Free Audit</button>
+            </form>
+        </div>
+        
+        <div class="benefits">
+            <div class="benefit">Detailed engagement analysis</div>
+            <div class="benefit">Content performance insights</div>
+            <div class="benefit">Growth recommendations</div>
+            <div class="benefit">Delivered within 24 hours</div>
+        </div>
+        
+        <p class="footer-text">© 2025 Cofeature LLC. Free audit, no spam.</p>
+    </div>
+
+    <!-- MailerLite Universal Script -->
+    <script async src="https://assets.mailerlite.com/js/universal.js"></script>
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1600306');
+    </script>
+</body>
+</html>
